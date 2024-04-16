@@ -31,6 +31,7 @@ public class Persona {
 
 	public void setDni(String dni) {
 		this.dni = dni;
+
 	}
 
 	public String getNombre() {
@@ -55,6 +56,7 @@ public class Persona {
 
 	public void setProvincia(String provincia) {
 		this.provincia = provincia;
+
 	}
 
 	public int calcularEdad() {
@@ -67,8 +69,15 @@ public class Persona {
 
 	}
 
-	public boolean esMayorEdad() {
-		return calcularEdad() >= 18;
+	public String esMayorEdad() {
+		String op;
+		
+		if (calcularEdad() >= 18) {
+			op = "La persona es mayor de edad";
+		} else {
+			op = "La persona no es mayor de edad";
+		}
+		return op;
 	}
 
 	public void mostrarDatos() {
@@ -77,10 +86,5 @@ public class Persona {
 		System.out.println("Fecha de Nacimiento: " + fechaNacimiento);
 		System.out.println("Provincia: " + provincia);
 		System.out.println("Edad: " + calcularEdad());
-		if (esMayorEdad()) {
-			System.out.println("La persona es mayor de edad");
-		} else {
-			System.out.println("La persona no es mayor de edad");
-		}
 	}
 }
